@@ -7,10 +7,11 @@ import {
 import Home from './pages/Home'
 import Navbar from './components/NavBar'
 import Footer from './components/Footer'
-import DreamForm from "./components/DreamForm";
+import DreamForm from "./pages/QueryForm";
 import HeroSection from "./components/Hero";
 import AboutUs from "./pages/About";
 import ContactUs from "./pages/Contact";
+import QueryForm from "./pages/QueryForm";
 // import Hero from "./components/Hero";
 // import NameCardPage from "./pages/NameCardPage";
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HeroSection />
+        element: <Home />
       },
       {
         path: '/home',
@@ -44,10 +45,10 @@ const router = createBrowserRouter([
         path: '/contact-us',
         element: <ContactUs />
       },
-      // {
-      //   path : '/name-cards',
-      //   element: <NameCardPage/>
-      // }
+      {
+        path : '/interpret',
+        element: <QueryForm/>
+      }
     ]
   },
 

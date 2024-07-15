@@ -1,7 +1,7 @@
 // src/components/DreamForm.js
 import React, { useState } from 'react';
 
-function DreamForm() {
+function QueryForm() {
     const [dreamDescription, setDreamDescription] = useState('');
     const [interpretation, setInterpretation] = useState('');
     const [error, setError] = useState('');
@@ -51,4 +51,4 @@ function DreamForm() {
     );
 }
 
-export default DreamForm;
+export default QueryForm;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeroImg from '../assets/hero.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,9 +24,11 @@ export default function HeroSection() {
                         Decode the secrets of your subconscious
                     </p>
                     <div className="pt-4 md:pt-6 lg:pt-8">
+                        <Link to= "/interpret">
                         <button onClick={goToLogin} className="button text-white py-3 px-6 rounded-lg text-base hover:bg-pink-600 transition-colors duration-300">
                             Get Started
                         </button>
+                        </Link>
                     </div>
                 </div>
             </div>

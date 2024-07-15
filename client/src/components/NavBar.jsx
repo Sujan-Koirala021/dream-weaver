@@ -23,7 +23,9 @@ function NavBar() {
     <div className='bg-gray-800 text-white'>
       <div className='flex flex-row items-center justify-between p-4'>
         <div className='text-lg font-bold ml-8 flex'>
+        <Link to="/">
           <PaperAirplaneIcon className="h-7 w-7 text-white mr-5" />
+        </Link>
           <div>
             Dream Weaver
           </div>
@@ -39,7 +41,9 @@ function NavBar() {
           <Link to="/" className='block p-4 text-white '>Home</Link>
           <Link to="/about" className='block p-4 text-white'>About</Link>
           <Link to="/contact-us" className='block p-4 text-white '>Contact Us</Link>
+          <Link to="/interpret">
           <div className='button cursor-pointer'>Get Started</div>          
+          </Link>
         </div>
       </div>
       {isOpen && (
