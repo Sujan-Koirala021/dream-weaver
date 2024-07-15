@@ -43,19 +43,22 @@ function DreamForm() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white m-24">
-      <div className="flex justify-center mb-16">
-        <img src={dreamImage} alt="Dream" className="w-60 h-60 object-cover rounded-full border-4 border-gray-700" />
+    <div className="max-w-xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white mt-24 mb-4">
+      <div className="flex justify-center mb-6">
+        <img src={dreamImage} alt="Dream" className="w-48 h-48 object-cover rounded-full border-4 border-gray-700 mb-10" />
+      </div>
+      <div className=" text-center text-lg font-semibold text-blue-300 animate-fade-in mb-10">
+        "Dreams are the touchstones of our character." - Henry David Thoreau
       </div>
       <textarea
-        className="w-full p-5 bg-gray-800 text-white border border-gray-600 rounded mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded mb-16 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={dreamDescription}
         onChange={(e) => setDreamDescription(e.target.value)}
         placeholder="Enter your dream description"
         rows="4"
       />
       <button
-        className="w-full bg-blue-500 text-white mt-8 py-2 rounded hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
+        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50"
         onClick={handleDreamSubmit}
         disabled={loading}
       >
