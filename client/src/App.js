@@ -7,6 +7,7 @@ import {
 import Home from './pages/Home'
 import Navbar from './components/NavBar'
 import Footer from './components/Footer'
+import DreamForm from "./components/DreamForm";
 // import AboutUs from "./pages/AboutUs";
 // import ContactUs from "./pages/ContactUs";
 // import Hero from "./components/Hero";
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       // },
       {
         path: '/home',
-        element: <Home />
+        element: <DreamForm />
       },
       // {
       //   path: '/about',

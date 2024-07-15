@@ -1,35 +1,41 @@
+# main.py
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import mindsdb_sdk
+from fastapi.middleware.cors import CORSMiddleware
 
-# Connect to MindsDB
+app = FastAPI()
+
+# Load MindsDB connection and model
 con = mindsdb_sdk.connect()
+target_model_name = "dream_weaver_model_pro_max"  # Replace with your model's actual name
+model = con.models.get(target_model_name)
 
-# Assuming you already have the connection established correctly
-project = con
-models = project.models.list()
+class DreamRequest(BaseModel):
+    dream_description: str
 
-if models:
-    target_model_name = "dream_weaver_model_pro_max"  # Replace with your model's actual name
+# CORS settings
+origins = [
+    "http://localhost",
+    "http://localhost:3000",  # Replace with your React frontend URL
+]
 
-    # Find the model by name
-    model = next((m for m in models if m.name == target_model_name), None)
-    
-    # Example query for prediction
-    query = {"dream_description": "Interpret this dream: Return result in json form with dream_interpreation, possible meaning{must be list of tags}, insights(tags), symbols(tags), emotions(tags with emoji) :  I was picking papaya and suddenly saw banana on papaya tree."}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
-    # Restricting to dream-related queries
-    if "dream" in query["dream_description"].lower():
-        try:
-            prediction = model.predict(query)
-            
-            # Extract the prediction value from the DataFrame
-            dream_interpretation = prediction['dream_interpretation'].iloc[0]
-            
-            # Print out the prediction
-            print(dream_interpretation)
-            
-        except ValueError as e:
-            print("Prediction Error:", e)
-    else:
-        print("Please provide a dream-related description.")
-else:
-    print("No models found.")
+@app.post("/api/predict")
+async def predict_dream(request: DreamRequest):
+    try:
+        dream_description = request.dream_description
+
+        prediction = model.predict({'dream_description': dream_description})
+        dream_interpretation = prediction['dream_interpretation'].iloc[0]
+
+        return {"dream_interpretation": dream_interpretation}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
