@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import DreamForm from "./components/DreamForm";
 import HeroSection from "./components/Hero";
 import AboutUs from "./pages/About";
-// import ContactUs from "./pages/ContactUs";
+import ContactUs from "./pages/Contact";
 // import Hero from "./components/Hero";
 // import NameCardPage from "./pages/NameCardPage";
 
@@ -40,10 +40,10 @@ const router = createBrowserRouter([
         path: '/about',
         element: <AboutUs />
       },
-      // {
-      //   path: '/contact-us',
-      //   element: <ContactUs />
-      // },
+      {
+        path: '/contact-us',
+        element: <ContactUs />
+      },
       // {
       //   path : '/name-cards',
       //   element: <NameCardPage/>

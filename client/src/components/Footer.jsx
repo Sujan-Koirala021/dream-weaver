@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className='text-gray-200 bg-slate-900 p-8 md:p-16'> {/* Adjusted padding here */}
+        <div className='text-gray-200 bg-slate-900 p-8 md:p-16 border-t-2' > {/* Adjusted padding here */}
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
                     <div className='flex flex-col mb-6 md:mb-0'>

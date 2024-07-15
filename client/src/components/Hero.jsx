@@ -10,7 +10,7 @@ export default function HeroSection() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 border-b-2">
+        <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 ">
             <div className="w-full md:w-1/2 md:pr-8 lg:pr-16 flex-shrink-0 flex flex-col justify-center mb-8 md:mb-0">
                 <div className="max-w-lg mx-auto md:mx-0">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pink-300 leading-tight mb-4 md:mb-6">
