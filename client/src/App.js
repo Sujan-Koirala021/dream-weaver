@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Navbar from './components/NavBar'
 import Footer from './components/Footer'
 import DreamForm from "./components/DreamForm";
+import HeroSection from "./components/Hero";
 // import AboutUs from "./pages/AboutUs";
 // import ContactUs from "./pages/ContactUs";
 // import Hero from "./components/Hero";
@@ -27,10 +28,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      // {
-        // path: '/',
-        // element: <Hero />
-      // },
+      {
+        path: '/',
+        element: <HeroSection />
+      },
       {
         path: '/home',
         element: <DreamForm />
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="app">
+    <div className="app bg-slate-900">
 
         <RouterProvider router={router} />
 
