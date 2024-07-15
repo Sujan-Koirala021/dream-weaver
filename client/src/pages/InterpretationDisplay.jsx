@@ -1,40 +1,60 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function InterpretationDisplay({ interpretation }) {
+function InterpretationPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const interpretation = location.state?.interpretation;
+
   return (
-    <div className="mt-4 p-4 bg-gray-100 rounded shadow">
-      <h3 className="text-xl font-semibold mb-2">Dream Interpretation</h3>
-      <p className="mb-2">{interpretation.dream_interpretation}</p>
+    <div className="max-w-xl mx-auto p-6 bg-gray-800 rounded-lg shadow-lg text-white mt-8">
+      <h3 className="text-2xl font-semibold mb-4">Dream Interpretation</h3>
+      <p className="mb-6">{interpretation.dream_interpretation}</p>
 
-      <h4 className="text-lg font-semibold mt-4">Possible Meanings</h4>
-      <ul className="list-disc list-inside">
+      <h4 className="text-xl font-semibold mt-4">Possible Meanings</h4>
+      <div className="flex flex-wrap gap-2 mt-2">
         {interpretation.possible_meaning.map((meaning, index) => (
-          <li key={index}>{meaning}</li>
+          <div key={index} className="bg-blue-500 text-white py-1 px-3 rounded-lg shadow-md">
+            {meaning}
+          </div>
         ))}
-      </ul>
+      </div>
 
-      <h4 className="text-lg font-semibold mt-4">Insights</h4>
-      <ul className="list-disc list-inside">
+      <h4 className="text-xl font-semibold mt-4">Insights</h4>
+      <div className="flex flex-wrap gap-2 mt-2">
         {interpretation.insights.map((insight, index) => (
-          <li key={index}>{insight}</li>
+          <div key={index} className="bg-green-500 text-white py-1 px-3 rounded-lg shadow-md">
+            {insight}
+          </div>
         ))}
-      </ul>
+      </div>
 
-      <h4 className="text-lg font-semibold mt-4">Symbols</h4>
-      <ul className="list-disc list-inside">
+      <h4 className="text-xl font-semibold mt-4">Symbols</h4>
+      <div className="flex flex-wrap gap-2 mt-2">
         {interpretation.symbols.map((symbol, index) => (
-          <li key={index}>{symbol}</li>
+          <div key={index} className="bg-purple-500 text-white py-1 px-3 rounded-lg shadow-md">
+            {symbol}
+          </div>
         ))}
-      </ul>
+      </div>
 
-      <h4 className="text-lg font-semibold mt-4">Emotions</h4>
-      <ul className="list-disc list-inside">
+      <h4 className="text-xl font-semibold mt-4">Emotions</h4>
+      <div className="flex flex-wrap gap-2 mt-2">
         {interpretation.emotions.map((emotion, index) => (
-          <li key={index}>{emotion}</li>
+          <div key={index} className="bg-red-500 text-white py-1 px-3 rounded-lg shadow-md">
+            {emotion}
+          </div>
         ))}
-      </ul>
+      </div>
+
+      <button
+        onClick={() => navigate('/')}
+        className="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors duration-300"
+      >
+        Explore More Dreams
+      </button>
     </div>
   );
 }
 
-export default InterpretationDisplay;
+export default InterpretationPage;

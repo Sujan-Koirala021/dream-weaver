@@ -12,6 +12,7 @@ import HeroSection from "./components/Hero";
 import AboutUs from "./pages/About";
 import ContactUs from "./pages/Contact";
 import QueryForm from "./pages/QueryForm";
+import InterpretationPage from "./pages/InterpretationDisplay";
 // import Hero from "./components/Hero";
 // import NameCardPage from "./pages/NameCardPage";
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path : '/interpret',
         element: <QueryForm/>
+      },
+      {
+        path : '/result',
+        element: <InterpretationPage/>
       }
     ]
   },
