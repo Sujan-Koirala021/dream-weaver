@@ -63,11 +63,6 @@ Dream Weaver: Unveil Your Dreams is your ultimate tool for dream analysis and un
 
 ### Installation
 
-### Run mindsdb locally
-```bash
-docker run --name mindsdb_container -p 47334:47334 -p 47335:47335 mindsdb/mindsdb
-```
-### Go to 
 
 
 
@@ -78,6 +73,44 @@ git clone https://github.com/Sujan-Koirala021/dream-weaver.git
 #### Go to the repository:
 ```bash
 cd dream-weaver
+```
+
+### Run mindsdb locally
+```bash
+docker run --name mindsdb_container -p 47334:47334 -p 47335:47335 mindsdb/mindsdb
+```
+#### Go to mindsdb editor at http://localhost:47334
+
+#### Go to Settings>Manage Integrations and install Google Gemini
+
+#### Get Gemini Api 
+Refer this : https://ai.google.dev/gemini-api/docs/api-key?authuser=1
+
+#### Run following queries step by step to create model
+- Replace 'your-gemini-api' with your gemini api key
+- You may use your desired model_name, in our case: dream_weaver_model_pro_max
+- Make sure you use the same model_name in backend at main.py
+
+```bash
+CREATE ML_ENGINE google_gemini_engine
+FROM google_gemini
+USING
+      google_gemini_api_key = 'your-gemini-api';
+```
+```bash
+CREATE MODEL dream_weaver_model_pro_max
+PREDICT dream_interpretation, possible_meaning, insights, symbols, emotions
+USING
+      engine = 'google_gemini_engine',
+      column = 'dream_description',
+      model = 'gemini-pro',
+      template = '{"dream_interpretation": "{dream_interpretation}", "possible_meaning": "{possible_meaning}", "insights": "{insights}", "symbols": "{symbols}", "emotions": "{emotions}"}';
+```
+#### Query to get response
+```bash
+SELECT dream_interpretation
+FROM dream_weaver_model_pro_max
+WHERE dream_description = 'Interpret dream of seeing papaya.';
 ```
 
 
@@ -122,6 +155,10 @@ env\Scripts\activate # to activate
 #### Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+#### Run backend
+```bash
+uvicorn main:app --reload 
 ```
 
 ## Usage
