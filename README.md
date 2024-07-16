@@ -63,6 +63,14 @@ Dream Weaver: Unveil Your Dreams is your ultimate tool for dream analysis and un
 
 ### Installation
 
+### Run mindsdb locally
+```bash
+docker run --name mindsdb_container -p 47334:47334 -p 47335:47335 mindsdb/mindsdb
+```
+### Go to 
+
+
+
 #### Clone the repository:
 ```bash
 git clone https://github.com/Sujan-Koirala021/dream-weaver.git
@@ -90,6 +98,17 @@ npm install
 npm start
 ```
 
+
+
+
+
+### Setup Backend 
+
+#### Navigate to the server directory:
+```bash
+cd server
+```
+
 #### Set up a virtual environment :
 ```bash
 python -m venv env
@@ -105,32 +124,11 @@ env\Scripts\activate # to activate
 pip install -r requirements.txt
 ```
 
-
-
-### Setup Backend 
-
-#### Navigate to the server directory:
-```bash
-cd server
-```
-
-#### Install dependencies:
-```bash
-npm install
-```
-
-#### Start the  server:
-```bash
-npm start
-```
-
 ## Usage
 
 #### Visit the frontend application:
 Open your browser and navigate to `http://localhost:3000`.
 
-#### Make sure the backend is running at:
-`http://localhost:3001`.
 
 
 ## Screenshots
