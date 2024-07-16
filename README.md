@@ -48,7 +48,7 @@ Dream Weaver: Unveil Your Dreams is your ultimate tool for dream analysis and un
 
 
 ## Demo
-<video src="https://github.com/user-attachments/assets/29767fcb-2bee-47ef-8186-8e811702392b"></video>
+<video src="https://github.com/user-attachments/assets/b4d81107-36d6-45db-a2bb-2353f8e96968"></video>
 
 
 
