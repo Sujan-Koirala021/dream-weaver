@@ -51,7 +51,7 @@ function DreamForm() {
         "Dreams are the touchstones of our character." - Henry David Thoreau
       </div>
       <textarea
-        className="w-full mb-7 p-3 bg-gray-800 text-white border border-gray-600 rounded mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full mb-7 p-3 bg-gray-800 text-white border border-gray-600 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={dreamDescription}
         onChange={(e) => setDreamDescription(e.target.value)}
         placeholder="Enter your dream description"
