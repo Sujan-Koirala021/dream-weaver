@@ -134,12 +134,12 @@ Open your browser and navigate to `http://localhost:3000`.
 
 
 ## Screenshots
+![1landing](https://github.com/user-attachments/assets/8f8b0843-7d64-4e28-a0e7-e2ac75082519)
+![2about](https://github.com/user-attachments/assets/4fc78804-b815-4041-a803-61e51bfc4ff2)
+![3contact](https://github.com/user-attachments/assets/03c88f20-d193-42b7-a1c9-c16875350e16)
+![4query](https://github.com/user-attachments/assets/23620c41-2e68-495f-813a-15d8867658de)
+![5result](https://github.com/user-attachments/assets/b12ad19f-acaa-4610-b7f5-9ee326160e30)
 
-![landing](https://github.com/Sujan-Koirala021/dream-weaver/assets/84112374/dad74a1d-53e2-40d7-802b-bc545139b9fa)
-![about](https://github.com/Sujan-Koirala021/dream-weaver/assets/84112374/28317848-27ed-494e-9bf9-42e59c54fb67)
-![contact](https://github.com/Sujan-Koirala021/dream-weaver/assets/84112374/f103f3c0-f3e7-4489-828e-8492bdf8019b)
-![prompt](https://github.com/Sujan-Koirala021/dream-weaver/assets/84112374/7cbb5f4a-6d20-4b02-b50c-2529872b6cb7)
-![result](https://github.com/Sujan-Koirala021/dream-weaver/assets/84112374/f2a36447-c814-4245-9b6f-abc76cdbd418)
 
 
 ## Contributing
